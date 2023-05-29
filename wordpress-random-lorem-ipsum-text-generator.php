@@ -22,8 +22,8 @@ if (!defined('WP_LOREM_PLUGIN_DIR')) {
 
 // Enqueue scripts and styles
 function wp_lorem_enqueue_scripts() {
-    wp_enqueue_style('wp-lorem-style', plugins_url('/assets/css/style.css', __FILE__));
-    wp_enqueue_script('wp-lorem-script', plugins_url('/assets/js/script.js', __FILE__), array('jquery'), '1.0', true);
+    wp_enqueue_style('wp-lorem-style', plugins_url( '/assets/css/style.css', __FILE__ ), [], '1.0.1');
+    wp_enqueue_script('wp-lorem-script', plugins_url('/assets/js/script.js', __FILE__), array('jquery'), '1.0.1', true);
 }
 add_action('wp_enqueue_scripts', 'wp_lorem_enqueue_scripts');
 

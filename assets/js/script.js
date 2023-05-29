@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
     // Script for generating Lorem Ipsum text
-    function generateLoremIpsumText() {
+    function wpGenerateLoremIpsumText() {
         const wordCount = $("#wordCount").val();
         const paragraphCount = $("#paragraphCount").val();
         const startWithLorem = $("#startWithLorem").prop("checked");
@@ -19,29 +19,52 @@ jQuery(document).ready(function ($) {
             loremIpsumText += '<p>' + paragraph + '</p>';
         }
 
-        $("#generatedLoremIpsum").html(loremIpsumText);
+        $("#generated-lorem-ipsum").html(loremIpsumText);
     }
 
     // Event listeners for the buttons on the page (generate and copy)
-    $("#generate-btn").on("click", function(event) {
+    $("#generate-lorem-ipsum-btn").on("click", function(event) {
         event.preventDefault();
-        generateLoremIpsumText();
+        wpGenerateLoremIpsumText();
     });
 
 	// Function to copy the generated content to clipboard
-    function copyToClipboard() {
-        const generatedContent = $(".generatedContent").text();
-        const textarea = $("<textarea></textarea>");
+    function wpCopyLoremIpsumToClipboard() {
+        // Get the button, popup overlay and popup message elements
+		var button = $(this);
+		var popupOverlay = button.parent().find('.popup-overlay');
+		var popupMessage = popupOverlay.find('.popup-message');
 
-        textarea.text(generatedContent);
-        $("body").append(textarea);
-        textarea.select();
+		// Create a new textarea element and give it id='temp_element'
+		var textarea = $('<textarea id="temp_element"></textarea>');
 
-        document.execCommand("copy");
-        textarea.remove();
+		// Optional step to make less noise on the page, if any!
+		textarea.css({height: 0});
+
+		// Now append it to your page somewhere, I chose <body>
+		$('body').append(textarea);
+
+		// Give our textarea a value of whatever inside the <code> element
+		textarea.val(button.parent().find('#generated-lorem-ipsum').text());
+
+		// Now copy whatever inside the textarea to clipboard
+		textarea.select();
+		document.execCommand('copy');
+		//navigator.clipboard.writeText(textarea.val());
+
+		// Remove the textarea
+		textarea.remove();
+
+		// Display the popup overlay
+		popupOverlay.fadeIn(300, function() {
+			setTimeout(function() {
+				popupOverlay.fadeOut(300);
+				popupOverlay.css('display', 'flex');
+			}, 900);
+		});
     }
 
     // Add event listener to the copy password button
-    $("#copy-btn").on("click", copyToClipboard);
+    $("#lorem-ipsum-copy-btn").on("click", wpCopyLoremIpsumToClipboard);
 
 });

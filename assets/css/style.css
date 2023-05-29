@@ -1,36 +1,66 @@
 #lorem-ipsum-generator-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#lorem-ipsum-generator-form .checkbox-container {
+.input-number-container,
+.checkbox-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
+    margin-bottom: 20px;
 }
 
-#generatedLoremIpsumContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    border: 1px solid #ccc;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
+.input-number-container label,
+.checkbox-container label {
+    font-weight: 500;
 }
 
-#generatedLoremIpsumContainer #copy-btn {
-    margin-bottom: 0;
-    align-self: self-end;
-    display: flex;
-    justify-content: flex-end;
+.input-number-container input,
+.checkbox-container input {
+    margin-left: 10px;
 }
 
-#generatedLoremIpsum {
-    align-self: stretch;
-    margin: 0;
-    font-size: 1.2rem;
+#generate-lorem-ipsum-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#generate-lorem-ipsum-btn:hover {
+    background-color: #0056b3;
+}
+
+#generated-lorem-ipsum-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+#lorem-ipsum-copy-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#lorem-ipsum-copy-btn:hover {
+    background-color: #218838;
 }
 
 .popup-overlay {
@@ -53,22 +83,11 @@
     border-radius: 8px;
     font-size: 16px;
     text-align: center;
-    color: var(--ast-global-color-2);
+    color: #000;
     pointer-events: auto;
 }
 
-.copy-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    transition: all 0.3s ease;
-}
-
-.code-snippet-content {
-    padding: 15px 15px 5px 15px;
-}
-
-.small-button {
-    padding: 10px 20px;
-    transition: all 0.3s ease;
+#generated-lorem-ipsum {
+    margin-top: 20px;
+    line-height: 1.5;
 }

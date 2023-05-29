@@ -19,15 +19,15 @@ function random_lorem_ipsum_generator_shortcode() {
     </div>
 
     <!-- Button to generate Lorem Ipsum text -->
-    <button type="button" id="generate-btn">Generate Text</button>
+    <button type="button" id="generate-lorem-ipsum-btn">Generate Text</button>
 </form>
 <!-- Container for the generated Lorem Ipsum text -->
-<div id="generatedLoremIpsumContainer" class="generated-content-container">
-    <button id="copy-btn" class="copy-generated-content-button small-button">Copy</button>
+<div id="generated-lorem-ipsum-container">
+    <button id="lorem-ipsum-copy-btn">Copy</button>
     <div class="popup-overlay">
         <div class="popup-message">Copy successful</div>
     </div>
-    <p id="generatedLoremIpsum" class="generatedContent"></p>
+    <p id="generated-lorem-ipsum"></p>
 </div>
     <?php
     return ob_get_clean();

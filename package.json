@@ -1,0 +1,25 @@
+{
+	"name": "wordpress-random-lorem-ipsum-text-generator",
+	"version": "1.0.0",
+	"description": "A WordPress plugin for generating random Lorem Ipsum text.",
+	"main": "wordpress-random-lorem-ipsum-text-generator.php",
+	"scripts": {
+		"scss": "node-sass assets/css/style.scss assets/css/style.css",
+		"watch": "npm run scss -- --watch",
+		"phpcs": "phpcs --standard=phpcs.xml",
+		"phpcbf": "phpcbf --standard=phpcs.xml"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ginirator/wordpress-random-lorem-ipsum-text-generator.git"
+	},
+	"author": "Valeriu Dodon",
+	"license": "GPL-2.0",
+	"bugs": {
+		"url": "https://github.com/ginirator/wordpress-random-lorem-ipsum-text-generator/issues"
+	},
+	"homepage": "https://github.com/ginirator/wordpress-random-lorem-ipsum-text-generator#readme",
+	"devDependencies": {
+		"node-sass": "^6.0.1"
+	}
+}
